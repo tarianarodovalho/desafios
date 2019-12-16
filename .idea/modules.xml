@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/crawlers/crawlers.iml" filepath="$PROJECT_DIR$/crawlers/crawlers.iml" group="crawlers and modules" />
+      <module fileurl="file://$PROJECT_DIR$/crawlers/crawlers-adapter/crawlers-adapter.iml" filepath="$PROJECT_DIR$/crawlers/crawlers-adapter/crawlers-adapter.iml" group="crawlers and modules" />
+      <module fileurl="file://$PROJECT_DIR$/crawlers/crawlers-application/crawlers-application.iml" filepath="$PROJECT_DIR$/crawlers/crawlers-application/crawlers-application.iml" group="crawlers and modules" />
+      <module fileurl="file://$PROJECT_DIR$/crawlers/crawlers-config/crawlers-config.iml" filepath="$PROJECT_DIR$/crawlers/crawlers-config/crawlers-config.iml" group="crawlers and modules" />
+      <module fileurl="file://$PROJECT_DIR$/crawlers/crawlers-domain/crawlers-domain.iml" filepath="$PROJECT_DIR$/crawlers/crawlers-domain/crawlers-domain.iml" group="crawlers and modules" />
+      <module fileurl="file://$PROJECT_DIR$/crawlers/crawlers-usecase/crawlers-usecase.iml" filepath="$PROJECT_DIR$/crawlers/crawlers-usecase/crawlers-usecase.iml" group="crawlers and modules" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/desafios.iml" filepath="$PROJECT_DIR$/.idea/desafios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strings/strings.iml" filepath="$PROJECT_DIR$/strings/strings.iml" group="strings and modules" />
+      <module fileurl="file://$PROJECT_DIR$/strings/strings-adapter/strings-adapter.iml" filepath="$PROJECT_DIR$/strings/strings-adapter/strings-adapter.iml" group="strings and modules" />
+      <module fileurl="file://$PROJECT_DIR$/strings/strings-application/strings-application.iml" filepath="$PROJECT_DIR$/strings/strings-application/strings-application.iml" group="strings and modules" />
+      <module fileurl="file://$PROJECT_DIR$/strings/strings-config/strings-config.iml" filepath="$PROJECT_DIR$/strings/strings-config/strings-config.iml" group="strings and modules" />
+      <module fileurl="file://$PROJECT_DIR$/strings/strings-domain/strings-domain.iml" filepath="$PROJECT_DIR$/strings/strings-domain/strings-domain.iml" group="strings and modules" />
+      <module fileurl="file://$PROJECT_DIR$/strings/strings-usecase/strings-usecase.iml" filepath="$PROJECT_DIR$/strings/strings-usecase/strings-usecase.iml" group="strings and modules" />
+    </modules>
+  </component>
+</project>

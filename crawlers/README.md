@@ -1,31 +1,39 @@
 # Desafio 2: Crawlers
 
-Parte do trabalho na IDwall inclui desenvolver *crawlers/scrapers* para coletar dados de websites.
-Como nós nos divertimos trabalhando, às vezes trabalhamos para nos divertir!
+## Proposta
+Desenvolver uma aplicação que coleta subReddits e threads do Reddit e dispara uma mensagem para um bot do Telegram 
+conforme uma lista de títulos passados pelo usuário quando esse enviar o comando \NadaPraFazer. São retornadas apenas as 
+threads que possuem 5000 pontos ou mais.
 
-O Reddit é quase como um fórum com milhares de categorias diferentes. Com a sua conta, você pode navegar por assuntos técnicos, ver fotos de gatinhos, discutir questões de filosofia, aprender alguns life hacks e ficar por dentro das notícias do mundo todo!
+## Modo de uso
+Idealmente deveria ser usado da seguinte maneira:
+- Rodar a aplicação;
+- Acessar sua própria conta do Telegram e adicionar o bot "idwallTarianaCrawlerBot";
+- Enviar o comando "/NadaPraFazer" seguido da lista de nomes de subReddits que deseja receber, como no
+exemplo: "/NadaPraFazer cats;worldnews;brazil";
+- O bot retornará uma mensagem com a lista de SubReddits buscados.
 
-Subreddits são como fóruns dentro do Reddit e as postagens são chamadas *threads*.
+## Solução
+Começando pela camada de domínio, criei o SubRedditGenerator, responsável por converter as informações coletadas no Reddit 
+em uma lista de SubReddit com respectivas Threads. Criei também a interface SubRedditCrawler que possibilita a comunicação
+da camada de domínio com a camada de apresentação/adaptação.
+Em seguida implementei o caso de uso SubRedditFinder que orquestra a comunicação entre a camada de apresentação e a de 
+domínio.
+O próximo passo foi desenvolver a camada de adapters. Primeiro criei a SubRedditCrawlerImpl, que implementa a interface 
+SubRedditCrawler, que por meio do JSoup realiza a coleta dos dados em um mapa composto pelo título do SubReddit e uma 
+lista de Threads com as informações de score, título da Thread, Url dos comentários e da thread. Depois implementei a
+CrawlersController, que recebe o resultado da camada de aplicação (UseCase) SubRedditFinder e o transforma em JSON para
+então retornar ao TelegramBot, responsável por realizar a comunicação com o Telegram.
+Por fim desenvolvi a camada "application" onde está a Main, que dá início à aplicação e registra o bot, dando início a 
+ele, e também a camada de configuração que a Main acessa para recuperar informações como endpoint do Reddit e do 
+TelegramBot, nome de usuário e token do bot, além de criar as instâncias necessárias para a execução de toda a aplicação.
 
-Para quem gosta de gatos, há o subreddit ["/r/cats"](https://www.reddit.com/r/cats) com threads contendo fotos de gatos fofinhos.
-Para *threads* sobre o Brasil, vale a pena visitar ["/r/brazil"](https://www.reddit.com/r/brazil) ou ainda ["/r/worldnews"](https://www.reddit.com/r/worldnews/).
-Um dos maiores subreddits é o "/r/AskReddit".
 
-Cada *thread* possui uma pontuação que, simplificando, aumenta com "up votes" (tipo um like) e é reduzida com "down votes".
-
-Sua missão é encontrar e listar as *threads* que estão bombando no Reddit naquele momento!
-Consideramos como bombando *threads* com 5000 pontos ou mais.
-
-## Entrada
-- Lista com nomes de subreddits separados por ponto-e-vírgula (`;`). Ex: "askreddit;worldnews;cats"
-
-### Parte 1
-Gerar e imprimir uma lista contendo a pontuação, subreddit, título da thread, link para os comentários da thread e link da thread.
-Essa parte pode ser um CLI simples, desde que a formatação da impressão fique legível.
-
-### Parte 2
-Construir um robô que nos envie essa lista via Telegram sempre que receber o comando `/NadaPraFazer [+ Lista de subrredits]` (ex.: `/NadaPraFazer programming;dogs;brazil`)
-
-### Dicas
- - Use https://old.reddit.com/
- - Qualquer método para coletar os dados é válido. Caso não saiba por onde começar, procure por JSoup (Java), SeleniumHQ (Java), PhantomJS (Javascript) e Beautiful Soup (Python).
+## Tecnologias usadas
+- Maven 4
+- JUnit 5.5.2
+- Java 8
+- Mockito 1.10.19
+- JSoup 1.12.1
+- Gson 2.8.6
+- Telegrambots 4.4.0.2

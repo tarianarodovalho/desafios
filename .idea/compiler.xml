@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="crawlers-adapter" />
+        <module name="crawlers-domain" />
+        <module name="crawlers-config" />
+        <module name="crawlers-application" />
+        <module name="strings-adapter" />
+        <module name="crawlers-usecase" />
+        <module name="strings-usecase" />
+        <module name="strings-application" />
+        <module name="strings-domain" />
+        <module name="strings-config" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="crawlers" target="8" />
+      <module name="crawlers-adapter" target="8" />
+      <module name="crawlers-application" target="8" />
+      <module name="crawlers-config" target="8" />
+      <module name="crawlers-domain" target="8" />
+      <module name="crawlers-usecase" target="8" />
+      <module name="strings" target="8" />
+      <module name="strings-adapter" target="8" />
+      <module name="strings-application" target="8" />
+      <module name="strings-config" target="8" />
+      <module name="strings-domain" target="8" />
+      <module name="strings-usecase" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
